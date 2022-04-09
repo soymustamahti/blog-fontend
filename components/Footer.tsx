@@ -14,7 +14,7 @@ const Footer = () => {
                                 href='#!'
                                 role='button'
                             >
-                                <MDBIcon fab icon='facebook-f'/>
+                                <MDBIcon fab icon='facebook-f' className="flex"/>
                             </a>
 
                             <a
@@ -23,7 +23,7 @@ const Footer = () => {
                                 href='#!'
                                 role='button'
                             >
-                                <MDBIcon fab icon='twitter'/>
+                                <MDBIcon fab icon='twitter' className="flex"/>
                             </a>
 
                             <a
@@ -32,7 +32,7 @@ const Footer = () => {
                                 href='#!'
                                 role='button'
                             >
-                                <MDBIcon fab icon='google'/>
+                                <MDBIcon fab icon='google' className="flex"/>
                             </a>
                             <a
                                 className='btn btn-primary btn-floating m-1'
@@ -40,7 +40,7 @@ const Footer = () => {
                                 href='#!'
                                 role='button'
                             >
-                                <MDBIcon fab icon='instagram'/>
+                                <MDBIcon fab icon='instagram' className="flex"/>
                             </a>
 
                             <a
@@ -49,7 +49,7 @@ const Footer = () => {
                                 href='#!'
                                 role='button'
                             >
-                                <MDBIcon fab icon='linkedin-in'/>
+                                <MDBIcon fab icon='linkedin-in' className="flex"/>
                             </a>
 
                             <a
@@ -58,7 +58,7 @@ const Footer = () => {
                                 href='#!'
                                 role='button'
                             >
-                                <MDBIcon fab icon='github'/>
+                                <MDBIcon fab icon='github' className="flex"/>
                             </a>
                         </section>
                     </div>

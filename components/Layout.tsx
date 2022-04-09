@@ -19,6 +19,9 @@ const Layout = ({children, title, description}: any) => {
                     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     rel="stylesheet"
                 />
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+                      rel="stylesheet"/>
+
             </Head>
 
             <Header/>

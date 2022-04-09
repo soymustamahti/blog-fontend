@@ -2,7 +2,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, {useState} from 'react';
 import Title from '../components/Title';
-import {server} from '../config/api-url';
+import {server} from '../config/urls';
 import {useRouter} from 'next/router';
 import Alert from '../components/Errors/Alert';
 

@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import Thanks from '../../components/messages/Thanks';
 import Title from '../../components/Title';
 
-export default function thanks() {
+export default function thanks_creation() {
     return (
         <>
             <Layout>

@@ -10,9 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
     "alpinejs": "^3.9.5",
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
+    "jsonwebtoken": "^8.5.1",
     "mdb-react-ui-kit": "^3.0.0",
     "next": "12.1.4",
     "react": "18.0.0",

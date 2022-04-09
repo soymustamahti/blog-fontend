@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import {server} from '../../config/urls';
 
-const Profile = () => {
+const Create_profile = () => {
     const router = useRouter();
 
     const [error, setError] = useState(false);
@@ -50,7 +50,7 @@ const Profile = () => {
                         Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
                     },
                 });
-                if (response.status === 200) router.push('thanks');
+                if (response.status === 200) router.push('thanks_creation');
             } catch (err: any) {
                 if (err.response)
                     if (err.response.status) {
@@ -70,13 +70,13 @@ const Profile = () => {
     return (
         <>
             <Layout
-                title={'Profile'}
+                title={'Create_profile'}
                 description={'Here is where you completed your profile'}
             >
                 {errorReq.length
                     ? errorReq.map((e: string, i: number) => <Alert key={i} text={e}/>)
                     : null}
-                <Title title={'Profile'}/>
+                <Title title={'Create_profile'}/>
                 <div className="w-80 flex flex-col gap-3 w-8/12 mr-auto ml-auto mt-12 mb-12">
                     <h3 className="text-3xl mb-10">Complete yout profile</h3>
                     {/* {error ? <AlertError/> : null} */}
@@ -199,4 +199,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default Create_profile;

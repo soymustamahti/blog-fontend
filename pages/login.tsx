@@ -4,9 +4,10 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import Alert from '../components/Errors/Alert';
 import Title from '../components/Title';
-import {server} from '../config/api-url';
+import {server} from '../config/urls';
 
 export default function Login() {
+    //const {token, setToken}: any = useAuth('')
     const router = useRouter();
     const [error, setError] = useState([]);
     const [login, setLogin] = useState({
@@ -18,8 +19,6 @@ export default function Login() {
         window.scrollTo(0, 0);
         try {
             const response = await axios.post(`${server}/auth/signin`, login);
-            console.log(response);
-
             if (response)
                 if (response.status === 200) {
                     localStorage.setItem(

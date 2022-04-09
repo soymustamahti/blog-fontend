@@ -1,10 +1,13 @@
 import axios from 'axios';
 import Link from 'next/link';
 import React, {useEffect, useState} from 'react';
-import {server} from '../../config/api-url';
+import {server} from '../../config/urls';
 import Image from 'next/image'
+import {useRouter} from "next/router";
 
 const Header = () => {
+    const router = useRouter();
+
     const [profileNotif, setProfileNotif] = useState(true);
 
     const checkProfile = async () => {
@@ -32,6 +35,11 @@ const Header = () => {
             }
         }
     };
+
+    const logout = () => {
+        localStorage.clear()
+        router.push('/login')
+    }
 
     useEffect(() => {
         checkProfile();
@@ -79,9 +87,6 @@ const Header = () => {
                         </div>
 
                         <div className="d-flex align-items-center">
-                            <a className="text-reset me-3" href="#">
-                                <i className="fas fa-shopping-cart"></i>
-                            </a>
 
                             <div className="dropdown">
                                 <a
@@ -95,8 +100,8 @@ const Header = () => {
                                     <i className="fas fa-bell"></i>
                                     {!profileNotif ? (
                                         <span className="badge rounded-pill badge-notification bg-danger">
-                    1
-                  </span>
+                                        1
+                                        </span>
                                     ) : null}
                                 </a>
                                 <ul
@@ -105,8 +110,8 @@ const Header = () => {
                                 >
                                     {!profileNotif ? (
                                         <li>
-                                            <Link href="/profile">
-                                                <a className="dropdown-item flex justify-between">
+                                            <Link href="/profile/create_profile">
+                                                <a className="dropdown-item flex justify-between items-center	">
                                                     Profile
                                                     <i className="fa-solid fa-circle-exclamation"></i>
                                                 </a>
@@ -141,20 +146,32 @@ const Header = () => {
                                     className="dropdown-menu dropdown-menu-end"
                                     aria-labelledby="navbarDropdownMenuAvatar"
                                 >
+                                    {profileNotif ? <li>
+
+                                        <Link href="/profile/edit_profile">
+                                            <a className="dropdown-item flex justify-between items-center" href="#">
+                                                My profile
+                                                <i className="fas fa-user"></i>
+                                            </a>
+                                        </Link>
+
+                                    </li> : null
+                                    }
                                     <li>
-                                        <a className="dropdown-item" href="#">
-                                            My profile
-                                        </a>
+                                        <Link href="/settings">
+                                            <a className="dropdown-item flex justify-between items-center" href="#">
+                                                Settings
+                                                <i className="fa-solid fa-gear"></i>
+                                            </a>
+                                        </Link>
+
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="#">
-                                            Settings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="dropdown-item" href="#">
+                                        <button className="dropdown-item flex justify-between items-center"
+                                                onClick={logout}>
                                             Logout
-                                        </a>
+                                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
